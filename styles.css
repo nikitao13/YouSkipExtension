@@ -26,6 +26,7 @@ body {
   padding: 5px 10px;
   background-color: #6e56cf;
   border-style: none;
+  user-select: none;
 }
 
 #heading {
@@ -34,4 +35,5 @@ body {
   margin-top: 0px;
   color: #6e56cf;
   font-size: 1.25rem;
+  user-select: none;
 }

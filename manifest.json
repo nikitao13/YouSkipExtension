@@ -18,7 +18,7 @@
   "web_accessible_resources": [
     {
       "resources": ["styles.css"],
-      "matches": ["*://www.youtube.com/watch?v=*"]
+      "matches": ["https://www.youtube.com/*"]
     }
   ],
   "content_security_policy": {

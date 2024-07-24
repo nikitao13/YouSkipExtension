@@ -1,15 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Time Jumper",
+  "name": "YouSkip",
   "version": "1.0",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
+  "description": "Skip to a specific timestamp in a YouTube video.",
   "permissions": ["activeTab"],
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["*://www.youtube.com/watch?v=*"],
       "js": ["content.js"],
       "css": ["styles.css"]
     }
@@ -17,7 +18,7 @@
   "web_accessible_resources": [
     {
       "resources": ["styles.css"],
-      "matches": ["*://www.youtube.com/*"]
+      "matches": ["*://www.youtube.com/watch?v=*"]
     }
   ],
   "content_security_policy": {

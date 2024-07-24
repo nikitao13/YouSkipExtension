@@ -7,7 +7,10 @@
     "default_icon": "icon.png"
   },
   "description": "Skip to a specific timestamp in a YouTube video.",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/watch?v=*"],
@@ -17,7 +20,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["styles.css"],
+      "resources": ["styles.css", "not_youtube.html"],
       "matches": ["https://www.youtube.com/*"]
     }
   ],

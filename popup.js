@@ -8,10 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   jumpButton.addEventListener("click", () => {
     const timeInputValue = timeInput.value;
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        action: "jumpToTime",
-        timeInput: timeInputValue,
-      });
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {
+          action: "jumpToTime",
+          timeInput: timeInputValue,
+        },
+        response => {
+          if (chrome.runtime.lastError) {
+            console.log(chrome.runtime.lastError.message);
+          }
+        }
+      );
     });
   });
 

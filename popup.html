@@ -3,15 +3,18 @@
   <head>
     <title>YouTube Time Jumper</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zain&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div className="container">
-      <input
-        type="text"
-        id="timeInput"
-        placeholder="Enter time (e.g., 2m40s)"
-      />
-      <button id="jumpButton">Jump to Time</button>
+    <div class="container">
+      <h1 id="heading">YouSkip</h1>
+      <input type="text" id="timeInput" placeholder="(e.g. 2m40s)" />
+      <button id="jumpButton">Skip To Time</button>
     </div>
     <script src="popup.js"></script>
   </body>

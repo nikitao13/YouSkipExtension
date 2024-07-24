@@ -1,12 +1,17 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "promptTime") {
-    const timeInput = prompt("Enter time (e.g., 2m40s):");
+  if (request.action === "jumpToTime") {
+    const { timeInput } = request;
     if (timeInput) {
       const seconds = parseTimeInput(timeInput);
       if (seconds !== null) {
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set("t", seconds + "s");
-        window.location.href = currentUrl.toString();
+        const video = document.querySelector("video");
+        if (video) {
+          video.currentTime = seconds;
+        } else {
+          alert("YouTube player not found or unsupported.");
+        }
+      } else {
+        alert("Invalid time format. Please use the format 1h2m3s.");
       }
     }
   }

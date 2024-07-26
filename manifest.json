@@ -14,13 +14,12 @@
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/watch?v=*"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+      "js": ["content.js"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["styles.css", "not_youtube.html"],
+      "resources": ["popup.css", "not_youtube.css", "not_youtube.html"],
       "matches": ["https://www.youtube.com/*"]
     }
   ],
